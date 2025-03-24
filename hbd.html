@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selamat Ulang Tahun</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            background-color: #f0e68c;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+            margin: 0; /* Menghilangkan margin default */
+        }
+        h1 {
+            font-size: 36px; /* Ukuran font yang lebih kecil */
+            color: #ff6347;
+            text-align: center;
+            animation: fadeIn 2s ease-in-out, bounce 1s infinite;
+            margin: 10px 0; /* Margin atas dan bawah */
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px); /* Mengurangi tinggi bounce */
+            }
+            60% {
+                transform: translateY(-5px); /* Mengurangi tinggi bounce */
+            }
+        }
+        .cake {
+            position: relative;
+            width: 150px; /* Ukuran kue yang lebih kecil */
+            height: 100px; /* Ukuran kue yang lebih kecil */
+            background-color: #ffcc00;
+            border-radius: 10px;
+            margin: 20px 0; /* Margin atas dan bawah */
+            animation: bounce 1s infinite;
+        }
+        .candle {
+            position: absolute;
+            width: 8px; /* Ukuran lilin yang lebih kecil */
+            height: 20px; /* Ukuran lilin yang lebih kecil */
+            background-color: #ff4500;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 100%;
+            animation: flicker 0.5s infinite alternate;
+        }
+        .flame {
+            position: absolute;
+            width: 8px; /* Ukuran api yang lebih kecil */
+            height: 8px; /* Ukuran api yang lebih kecil */
+            background-color: #ffcc00;
+            border-radius: 50%;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 20px; /* Mengatur posisi api */
+            animation: flame-animation 0.5s infinite alternate;
+        }
+        @keyframes flicker {
+            0% { height: 20px; }
+            100% { height: 15px; }
+        }
+        @keyframes flame-animation {
+            0% { transform: translateX(-50%) scale(1); }
+            100% { transform: translateX(-50%) scale(1.5); }
+        }
+        .card {
+            width: 300px; /* Ukuran kartu yang lebih kecil */
+            height: 225px; /* Ukuran kartu yang lebih kecil */
+            background-color: #fff;
+            border: 2px solid #ff6347;
+            border-radius: 10px;
+            padding: 10px;
+            text-align: center;
+            position: relative;
+            margin: 20px 0; /* Margin atas dan bawah */
+            animation: slideIn 1s ease-in-out;
+        }
+        @keyframes slideIn {
+            from {
+                transform: translateY(-100%);
+            }
+            to {
+                transform: translateY(0);
+            }
+        }
+        .firework {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            background-color: #ff4500;
+            border-radius: 50%;
+            animation: explode 1s infinite;
+        }
+        @keyframes explode {
+            0% { transform: scale(1); }
+            100% { transform: scale(3); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Selamat Ulang Tahun Sulis Nur Istikomah!</h1>
+    
+    <div class="cake">
+        <div class="candle">
+            <div class="flame"></div>
+        </div>
+        <div class="candle" style="left: 30%;">
+            <div class="flame"></div>
+        </div>
+        <div class="candle" style="left: 70%;">
+            <div class="flame"></div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>Semoga panjang umur, sehat selalu, semoga diberi kesehatan, doa terbaik buat kamu. (ngapura gur ngekei kaya ngene🙏)</h2>
+    </div>
+
+    <script>
+        // Menambahkan petasan secara dinamis
+        for (let i = 0; i < 10; i++) {
+            const firework = document.createElement('div');
+            firework.className = 'firework';
+            firework.style.left = Math.random() * 100 + '%';
+            firework.style.bottom = Math.random() * 100 + 'vh';
+            firework.style.animationDelay = Math.random() * 2 + 's';
+            document.body.appendChild(firework);
+        }
+    </script>
+
+</body>
+</html>
